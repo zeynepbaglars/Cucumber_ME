@@ -15,8 +15,8 @@ public class _01_LoginSteps {
     @When("Enter username and password and click login button")
     public void enter_username_and_password_and_click_login_button() {
         //System.out.println("username ve password girildi");
-        GWD.getDriver().findElement("username").sendKeys("turkeyts");
-        GWD.getDriver().findElement("password").sendKeys("TechnoStudy123");
+        //GWD.getDriver().findElement("username").sendKeys("turkeyts");
+        //GWD.getDriver().findElement("password").sendKeys("TechnoStudy123");
     }
 
     @Then("User should login successfully")
