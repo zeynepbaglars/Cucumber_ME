@@ -3,6 +3,10 @@ package StepDefinitions;
 import Pages.DialogContent;
 import Utilities.GWD;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class _01_LoginSteps {
     DialogContent dc=new DialogContent();
@@ -17,9 +21,17 @@ public class _01_LoginSteps {
     @When("Enter username and password and click login button")
     public void enter_username_and_password_and_click_login_button() {
         //System.out.println("username ve password girildi");
-        dc.username.sendKeys("turkeyts");
-        dc.password.sendKeys("TechnoStudy123");
-        dc.loginButton.click();
+
+//        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.visibilityOf(dc.username));
+//
+//        dc.username.sendKeys("turkeyts");
+//        dc.password.sendKeys("TechnoStudy123");
+       // dc.loginButton.click();
+
+        dc.sendKeys(dc.username,"turkeyts");
+        dc.sendKeys(dc.password,"TechnoStudy123");
+        dc.click(dc.loginButton);
     }
 
     @Then("User should login successfully")
