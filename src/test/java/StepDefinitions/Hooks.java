@@ -6,17 +6,17 @@ import io.cucumber.java.Before;
 
 public class Hooks {
 
-    @Before
+    @Before // Cucumber ın Annotation ı
     public void before()
     {
        // System.out.println("Senaryo başladı ?");
     }
 
-    @After
+    @After // Cucumber ın Annotation ı
     public void after()
     {
         //System.out.println("Senaryo bitti ?");
-        // doru çalışırsa burada quiti çağıracağım
+        // doğru çalışırsa burada quiti çağıracağım
         GWD.quitDriver();
     }
 
