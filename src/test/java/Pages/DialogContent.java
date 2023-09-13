@@ -35,6 +35,17 @@ public class DialogContent extends Parent{
     @FindBy(css="span[class='mat-mdc-tooltip-trigger logo-text']")
     public WebElement txtTechnoStudy;
 
+    @FindBy(css="")
+    public WebElement addButton;
+    @FindBy(css="")
+    public WebElement nameInput;
+    @FindBy(css="")
+    public WebElement codeInput;
+    @FindBy(css="")
+    public WebElement saveButton;
+    @FindBy(css="")
+    public WebElement successMessage;
+
 
 
 
