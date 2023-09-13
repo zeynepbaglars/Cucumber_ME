@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -30,32 +31,29 @@ public class DialogContent {
     @FindBy(css="button[aria-label='LOGIN']")
     public WebElement loginButton;
 
+    @FindBy(css="span[class='mat-mdc-tooltip-trigger logo-text']")
+    public WebElement txtTechnoStudy;
 
-    public void click(WebElement element){
-//        bir butona tıklatacağın zaman hangi aşamalar lazım
-//        wait clickable
-//        scrollunu yap
-//        click
+
+    public void myClick(WebElement element){
         WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(element));
-        //scroll yap
+        scrollToElement(element);
         element.click();
     }
 
-    public void sendKeys(WebElement element, String yazi){
-//        bir textbox ın sağlıklı çalışması için hangi aşamalar lazım
-//        visible olana kadar bekle
-//        scrollunu yap
-//        clear yap
-//        yazıyı gönder
-
+    public void mySendKeys(WebElement element, String yazi){
         WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(element));
-        //scroll yap
+        scrollToElement(element);
         element.clear();
         element.sendKeys(yazi);
     }
 
+    public void scrollToElement(WebElement element){
+        JavascriptExecutor js=(JavascriptExecutor)GWD.getDriver();
+        js.executeScript("arguments[0].scrollIntoView();", element);
+    }
 
 
 
