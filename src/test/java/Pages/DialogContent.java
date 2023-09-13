@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class DialogContent {
+public class DialogContent extends Parent{
 
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(), this);
@@ -36,33 +36,6 @@ public class DialogContent {
     public WebElement txtTechnoStudy;
 
 
-    public void myClick(WebElement element){
-        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-        scrollToElement(element);
-        element.click();
-    }
-
-    public void mySendKeys(WebElement element, String yazi){
-        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(element));
-        scrollToElement(element);
-        element.clear();
-        element.sendKeys(yazi);
-    }
-
-    public void scrollToElement(WebElement element){
-        JavascriptExecutor js=(JavascriptExecutor)GWD.getDriver();
-        js.executeScript("arguments[0].scrollIntoView();", element);
-    }
-
-    public void verifyContainsText(WebElement element, String value){
-
-        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.textToBePresentInElement(element,value));
-
-        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
-    }
 
 
 }
