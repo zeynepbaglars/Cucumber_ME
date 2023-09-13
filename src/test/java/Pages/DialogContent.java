@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -55,6 +56,13 @@ public class DialogContent {
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
+    public void verifyContainsText(WebElement element, String value){
+
+        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.textToBePresentInElement(element,value));
+
+        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
+    }
 
 
 }
