@@ -34,6 +34,7 @@ public class Parent {
     public void verifyContainsText(WebElement element, String value){
         wait.until(ExpectedConditions.textToBePresentInElement(element,value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
+        //action la esc ye bas
     }
 
 }

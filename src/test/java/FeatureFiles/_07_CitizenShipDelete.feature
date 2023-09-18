@@ -25,7 +25,7 @@ Feature: Citizenship Functionality
 
     Examples:
       | name     | shortname |
-      | ism23cs1 | sh56is1   |
+      | ism23c66s1 | sh66   |
 #      | ism23cs2 | sh56is2   |
 #      | ism23cs3 | sh56is3   |
 #      | ism23cs4 | sh56is4   |
