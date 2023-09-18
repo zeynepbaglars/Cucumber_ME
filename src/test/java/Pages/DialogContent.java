@@ -52,7 +52,17 @@ public class DialogContent extends Parent{
     @FindBy(xpath="//div[contains(text(),'already exists')]")
     public WebElement alreadyExist;
 
+    @FindBy(xpath="//ms-text-field[contains(@placeholder,'NAME')]//input[@data-placeholder='Name']")
+    public WebElement searchInput;
 
+    @FindBy(xpath="//ms-search-button//button")
+    public WebElement searchButton;
+
+    @FindBy(xpath="(//ms-delete-button//button)[1]")
+    public WebElement deleteImageBtn;
+
+    @FindBy(xpath="//button[@type='submit']")
+    public WebElement deleteDialogBtn;
 
 
 
