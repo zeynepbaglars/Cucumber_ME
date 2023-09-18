@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -53,11 +54,15 @@ public class _04_CitizenshipSteps {
         dc.mySendKeys(dc.searchInput, name);
         dc.myClick(dc.searchButton);
 
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
         //beklet
         //1. StaleElemetn hatası verdi : erken buldum tez kaybettim
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        //dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         //wait.until(ExpectedConditions.stalenessOf(dc.deleteImageBtn)); //olabilir ama herzaman çözmez
+
+        //2.yöntem sayfanın kendi waitini , loding ini yakalayalım. (en sağlam yöntem)
+        //fuse-progress-bar/*    -> fuse-progress-bar ın çocukları
+        // bu çocukların 0 olana bekle
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"),0));
 
         dc.myClick(dc.deleteImageBtn);
         dc.myClick(dc.deleteDialogBtn);
