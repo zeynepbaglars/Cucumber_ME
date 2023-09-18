@@ -1,13 +1,27 @@
 package StepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+
+import java.util.List;
 
 public class _08_DataTableOrnek {
     @When("write username {string}")
-    public void writeUsername(String arg0) {
+    public void writeUsername(String userName) {
+        System.out.println("userName = " + userName);
     }
 
     @And("Write username and Password {string} and {string}")
-    public void writeUsernameAndPasswordAnd(String arg0, String arg1) {
+    public void writeUsernameAndPasswordAnd(String userName, String password) {
+        System.out.println("userName = " + userName);
+        System.out.println("password = " + password);
+    }
+
+    @And("Write username as DataTable")
+    public void writeUsernameAsDataTable(DataTable userlar) {
+        List<String> listUserlar= userlar.asList(String.class);
+
+        for (String user : listUserlar)
+            System.out.println("user = " + user);
     }
 }
