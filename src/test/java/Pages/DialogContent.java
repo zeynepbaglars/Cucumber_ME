@@ -82,6 +82,7 @@ public class DialogContent extends Parent{
         myClick(deleteImageBtn);
         myClick(deleteDialogBtn);
 
+        // silme ıslemı dıalogların ortak noktası olması sebebıyle buraya aldık. Silme islemi yapacagımız her seferınde tekrar tekrar kod yazmayalım dırekt cagıralım dıye aldık.
     }
 
 }
