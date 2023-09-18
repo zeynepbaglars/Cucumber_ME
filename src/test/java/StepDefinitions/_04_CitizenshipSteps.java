@@ -44,7 +44,7 @@ public class _04_CitizenshipSteps {
     @When("User delete the {string}")
     public void userDeleteThe(String name) {
 
-         dc.mySendKeys(dc.searchButton, name);
+         dc.mySendKeys(dc.searchInput, name);
          dc.myClick(dc.searchButton);
          dc.myClick(dc.deleteImageBtn);
          dc.myClick(dc.deleteDialogBtn);
