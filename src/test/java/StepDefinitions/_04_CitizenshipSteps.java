@@ -57,6 +57,7 @@ public class _04_CitizenshipSteps {
         //beklet
         //1. StaleElemetn hatası verdi : erken buldum tez kaybettim
         wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        //wait.until(ExpectedConditions.stalenessOf(dc.deleteImageBtn)); //olabilir ama herzaman çözmez
 
         dc.myClick(dc.deleteImageBtn);
         dc.myClick(dc.deleteDialogBtn);

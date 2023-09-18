@@ -24,9 +24,9 @@ Feature: Citizenship Functionality
     Then Success message should be displayed
 
     Examples:
-      | name     | shortname |
-      | ism23c66s1 | sh66   |
-#      | ism23cs2 | sh56is2   |
-#      | ism23cs3 | sh56is3   |
-#      | ism23cs4 | sh56is4   |
-#      | ism23cs5 | sh56is5   |
+      | name      | shortname |
+      | ism2673c5 | s4h66     |
+      | ism23c3s2 | sh56is2   |
+      | ism23c4s3 | sh56is3   |
+      | ism23c5s4 | sh56is4   |
+      | ism23c5s5 | sh56is5   |
