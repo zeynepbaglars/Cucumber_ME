@@ -50,22 +50,6 @@ public class _04_CitizenshipSteps {
 
     @When("User delete the {string}")
     public void userDeleteThe(String name) {
-
-        dc.mySendKeys(dc.searchInput, name);
-        dc.myClick(dc.searchButton);
-
-        //beklet
-        //1. StaleElemetn hatası verdi : erken buldum tez kaybettim
-        //dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        //wait.until(ExpectedConditions.stalenessOf(dc.deleteImageBtn)); //olabilir ama herzaman çözmez
-
-        //2.yöntem sayfanın kendi waitini , loding ini yakalayalım. (en sağlam yöntem)
-        //fuse-progress-bar/*    -> fuse-progress-bar ın çocukları
-        // bu çocukların 0 olana bekle
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"),0));
-
-        dc.myClick(dc.deleteImageBtn);
-        dc.myClick(dc.deleteDialogBtn);
-
+       dc.deleteItem(name);
     }
 }
