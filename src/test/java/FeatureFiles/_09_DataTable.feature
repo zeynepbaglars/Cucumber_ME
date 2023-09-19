@@ -62,7 +62,7 @@ Feature: DataTable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput       | ismFee1 |
+      | nameInput       | ism1Fee1 |
       | codeInput       | i2323   |
       | integrationCode | 121     |
       | priorityCode    | 2323    |
@@ -74,7 +74,7 @@ Feature: DataTable Functionality
     Then Success message should be displayed
 
     And User delete the element from Dialog
-      | ismFee1 |
+      | ism1Fee1 |
 
     Then Success message should be displayed
 

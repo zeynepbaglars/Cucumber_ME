@@ -65,6 +65,30 @@ public class DialogContent extends Parent{
     @FindBy(xpath="//button[@type='submit']")
     public WebElement deleteDialogBtn;
 
+    @FindBy(xpath="//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
+    private WebElement integrationCode;
+
+    @FindBy(xpath="//ms-integer-field[@formcontrolname='priority']/input")
+    private WebElement priorityCode;
+
+    @FindBy(xpath="//mat-slide-toggle[@formcontrolname='active']")
+    private WebElement toggleBar;
+
+    public WebElement getWebElement(String strElement){
+        switch (strElement){
+            case "addButton": return this.addButton;
+            case "saveButton": return this.saveButton;
+            case "nameInput": return this.nameInput;
+            case "codeInput": return this.codeInput;
+            case "integrationCode": return this.integrationCode;
+            case "priorityCode": return this.priorityCode;
+            case "toggleBar": return this.toggleBar;
+        }
+
+        return null;
+    }
+
+
     public void deleteItem(String searchText){
         mySendKeys(searchInput, searchText);
         myClick(searchButton); // fuse bar ı çocukları ortaya çıkıyor
@@ -84,17 +108,4 @@ public class DialogContent extends Parent{
 
         // silme ıslemı dıalogların ortak noktası olması sebebıyle buraya aldık. Silme islemi yapacagımız her seferınde tekrar tekrar kod yazmayalım dırekt cagıralım dıye aldık.
     }
-
-
-    public WebElement getWebElement(String strElement){
-        switch (strElement){
-            case "addButton": return this.addButton;
-            case "saveButton": return this.saveButton;
-            case "nameInput": return this.nameInput;
-            case "codeInput": return this.codeInput;
-        }
-
-        return null;
-    }
-
 }
