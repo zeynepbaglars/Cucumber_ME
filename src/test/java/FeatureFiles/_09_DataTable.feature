@@ -53,7 +53,30 @@ Feature: DataTable Functionality
 
 
   Scenario: Fee Functionality
+    And Click on the element in LeftNav
+      | setup      |
+      | parameters |
+      | fees       |
 
+    And Click on the element in Dialog
+      | addButton |
+
+    And User sending the keys in Dialog
+      | nameInput       | ismFee1 |
+      | codeInput       | i2323   |
+      | integrationCode | 121     |
+      | priorityCode    | 2323    |
+
+    And Click on the element in Dialog
+      | toggleBar  |
+      | saveButton |
+
+    Then Success message should be displayed
+
+    And User delete the element from Dialog
+      | ismFee1 |
+
+    Then Success message should be displayed
 
 
 
