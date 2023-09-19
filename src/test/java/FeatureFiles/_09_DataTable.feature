@@ -13,3 +13,7 @@ Feature: DataTable Functionality
 
     And Click on the element in Dialog
       | addButton |
+
+    And User sending the keys in Dialog
+      | nameInput | ismetUlk1 |
+      | codeInput | isKod1    |

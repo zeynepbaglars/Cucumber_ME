@@ -32,4 +32,17 @@ public class _09_DataTableSteps {
             dc.myClick(linkWebElement);
         }
     }
+
+
+    @And("User sending the keys in Dialog")
+    public void userSendingTheKeysInDialog(DataTable dt) {
+        List< List<String> >   items=  dt.asLists(String.class);
+
+        for (int i = 0; i < items.size(); i++) {
+            WebElement e=dc.getWebElement(items.get(i).get(0)); // 0. webelement
+            String yazi = items.get(i).get(1);//1. yazısı
+
+            dc.mySendKeys(e, yazi);
+        }
+    }
 }
