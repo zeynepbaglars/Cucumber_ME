@@ -17,3 +17,9 @@ Feature: DataTable Functionality
     And User sending the keys in Dialog
       | nameInput | ismetUlk1 |
       | codeInput | isKod1    |
+
+    And Click on the element in Dialog
+      | saveButton |
+
+    Then Success message should be displayed
+
