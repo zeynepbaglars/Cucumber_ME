@@ -26,14 +26,12 @@ public class _08_DataTableOrnek {
     }
 
     @And("Write username and Password as DataTable")
-    public void writeUsernameAndPasswordAsDataTable(DataTable kullaniciVeSifreler) {
-       List< List<String> >  listKullaniciVeSifreler= kullaniciVeSifreler.asLists(String.class); // listelerin listesi
+    public void writeUsernameAndPasswordAsDataTable(DataTable userlarVeSifreler) {
+        List< List<String> >   userSifrList=  userlarVeSifreler.asLists(String.class);
 
-        for (int i = 0; i < listKullaniciVeSifreler.size(); i++) {
-            System.out.println("ListItemleri = "+ listKullaniciVeSifreler.get(i).get(0)+" "+ // username
-                                                  listKullaniciVeSifreler.get(i).get(1) );   // password
+        for (int i = 0; i < userSifrList.size(); i++) {
+            System.out.println(userSifrList.get(i).get(0)+" "+userSifrList.get(i).get(1));
         }
-
 
     }
 }

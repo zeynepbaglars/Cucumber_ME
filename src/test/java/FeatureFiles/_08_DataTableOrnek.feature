@@ -17,3 +17,8 @@ Feature: DataTable Ornek
       | mehmet | 23323 |
       | ayşe   | 45454 |
       | fatma  | 44545 |
+
+#  dataProvider(testNG için) , Senaryo Outline(cucumber)
+#  Görevi : verilen her değer , tüm senaryoyo çalıştırma
+#
+#  dataTable ise , bir stepe , çok parametre vermemizi sağlıyor

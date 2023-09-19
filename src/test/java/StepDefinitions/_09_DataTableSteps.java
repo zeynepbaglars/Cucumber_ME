@@ -1,16 +1,21 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
+import Pages.LeftNav;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class _09_DataTableSteps {
-    DialogContent dc=new DialogContent();
+    LeftNav ln=new LeftNav();
 
     @And("Click on the element in LeftNav")
-    public void clickOnTheElementInLeftNav() {
+    public void clickOnTheElementInLeftNav(DataTable linkler) {
+       List<String> strlinkList=linkler.asList(String.class);
 
-
-//        for(WebElement e: elementlerim)
-//            dc.myClick(e);
+          for(String strLink: strlinkList)
+               ln.myClick( ln.getWebElement(strLink) );
     }
 }
