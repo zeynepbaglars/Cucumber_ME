@@ -52,6 +52,9 @@ Feature: DataTable Functionality
     Then Success message should be displayed
 
 
+  Scenario: Fee Functionality
+
+
 
 
 
