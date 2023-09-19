@@ -15,8 +15,8 @@ Feature: DataTable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | ism1etUlk1 |
-      | codeInput | isKod1    |
+      | nameInput | ism1etU1lk1 |
+      | codeInput | isKod1      |
 
     And Click on the element in Dialog
       | saveButton |
@@ -24,6 +24,38 @@ Feature: DataTable Functionality
     Then Success message should be displayed
 
     And User delete the element from Dialog
-      | ism1etUlk1 |
+      | ism1etU1lk1 |
 
     Then Success message should be displayed
+
+
+  Scenario:  Create Nationality
+    And Click on the element in LeftNav
+      | setup         |
+      | parameters    |
+      | nationalities |
+
+    And Click on the element in Dialog
+      | addButton |
+
+    And User sending the keys in Dialog
+      | nameInput | ismNat1 |
+
+    And Click on the element in Dialog
+      | saveButton |
+
+    Then Success message should be displayed
+
+    And User delete the element from Dialog
+      | ismNat1 |
+
+    Then Success message should be displayed
+
+
+
+
+
+
+
+
+
