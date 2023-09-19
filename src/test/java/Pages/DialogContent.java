@@ -85,4 +85,14 @@ public class DialogContent extends Parent{
         // silme ıslemı dıalogların ortak noktası olması sebebıyle buraya aldık. Silme islemi yapacagımız her seferınde tekrar tekrar kod yazmayalım dırekt cagıralım dıye aldık.
     }
 
+
+    public WebElement getWebElement(String strElement){
+        switch (strElement){
+            case "addButton": return this.addButton;
+            case "saveButton": return this.saveButton;
+        }
+
+        return null;
+    }
+
 }

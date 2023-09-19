@@ -9,13 +9,27 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class _09_DataTableSteps {
-    LeftNav ln=new LeftNav();
+    LeftNav ln = new LeftNav();
+    DialogContent dc = new DialogContent();
 
     @And("Click on the element in LeftNav")
     public void clickOnTheElementInLeftNav(DataTable linkler) {
-       List<String> strlinkList=linkler.asList(String.class);
+        List<String> strlinkList = linkler.asList(String.class);
 
-          for(String strLink: strlinkList)
-               ln.myClick( ln.getWebElement(strLink) );
+        for (int i = 0; i < strlinkList.size(); i++) {
+            WebElement linkWebElement = ln.getWebElement(strlinkList.get(i));
+            ln.myClick(linkWebElement);
+        }
+    }
+
+
+    @And("Click on the element in Dialog")
+    public void clickOnTheElementInDialog(DataTable buttons) {
+        List<String> strButtonsList = buttons.asList(String.class);
+
+        for (int i = 0; i < strButtonsList.size(); i++) {
+            WebElement linkWebElement = dc.getWebElement(strButtonsList.get(i));
+            dc.myClick(linkWebElement);
+        }
     }
 }
