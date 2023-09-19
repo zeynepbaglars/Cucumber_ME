@@ -15,7 +15,7 @@ Feature: DataTable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | ismetUlk1 |
+      | nameInput | ism1etUlk1 |
       | codeInput | isKod1    |
 
     And Click on the element in Dialog
@@ -23,3 +23,7 @@ Feature: DataTable Functionality
 
     Then Success message should be displayed
 
+    And User delete the element from Dialog
+      | ism1etUlk1 |
+
+    Then Success message should be displayed

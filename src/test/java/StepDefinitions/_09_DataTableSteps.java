@@ -47,5 +47,12 @@ public class _09_DataTableSteps {
     }
 
 
+    @And("User delete the element from Dialog")
+    public void userDeleteTheElementFromDialog(DataTable dt) {
+        List<String> silinecekler = dt.asList(String.class);
 
+        for (int i = 0; i < silinecekler.size(); i++) {
+            dc.deleteItem(silinecekler.get(i));
+        }
+    }
 }
