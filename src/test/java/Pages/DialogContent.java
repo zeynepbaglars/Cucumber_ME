@@ -83,7 +83,6 @@ public class DialogContent extends Parent{
     @FindBy(xpath="(//span[text()='Grade Level'])[1]")
     private WebElement gradeLevel;
 
-    //@FindBy(xpath="(//mat-option//span)[2]")
     @FindBy(xpath = "(//*[@role='option'])[4]")
     private WebElement gradeLevel2;
 
