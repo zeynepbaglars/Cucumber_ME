@@ -53,7 +53,7 @@ public class DialogContent extends Parent{
     @FindBy(xpath="//div[contains(text(),'already exists')]")
     public WebElement alreadyExist;
 
-    @FindBy(xpath="//ms-text-field[contains(@placeholder,'NAME')]//input[@data-placeholder='Name']")
+    @FindBy(xpath="//mat-form-field//input[@data-placeholder='Name']")
     public WebElement searchInput;
 
     @FindBy(xpath="//ms-search-button//button")
@@ -77,14 +77,19 @@ public class DialogContent extends Parent{
     @FindBy(xpath="//mat-select//span[text()='Academic Period']")
     private WebElement academicPeriod;
 
-    @FindBy(xpath="(//mat-option/span)[1]")
+    @FindBy(xpath="//mat-option/span")
     private WebElement academicPeriod1;
 
     @FindBy(xpath="(//span[text()='Grade Level'])[1]")
     private WebElement gradeLevel;
 
-    @FindBy(xpath="(//mat-option//span)[2]")
+    //@FindBy(xpath="(//mat-option//span)[2]")
+    @FindBy(xpath = "(//*[@role='option'])[4]")
     private WebElement gradeLevel2;
+
+    @FindBy(xpath="//mat-select//span[text()='Test 2024']")
+    private WebElement searchAcademicPeriod;
+
 
     public WebElement getWebElement(String strElement){
         switch (strElement){
@@ -99,6 +104,7 @@ public class DialogContent extends Parent{
             case "academicPeriod1": return this.academicPeriod1;
             case "gradeLevel": return this.gradeLevel;
             case "gradeLevel2": return this.gradeLevel2;
+            case "searchAcademicPeriod": return this.searchAcademicPeriod;
         }
 
         return null;
