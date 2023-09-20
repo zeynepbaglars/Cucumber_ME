@@ -74,6 +74,18 @@ public class DialogContent extends Parent{
     @FindBy(xpath="//mat-slide-toggle[@formcontrolname='active']")
     private WebElement toggleBar;
 
+    @FindBy(xpath="//mat-select//span[text()='Academic Period']")
+    private WebElement academicPeriod;
+
+    @FindBy(xpath="(//mat-option/span)[1]")
+    private WebElement academicPeriod1;
+
+    @FindBy(xpath="(//span[text()='Grade Level'])[1]")
+    private WebElement gradeLevel;
+
+    @FindBy(xpath="(//mat-option//span)[2]")
+    private WebElement gradeLevel2;
+
     public WebElement getWebElement(String strElement){
         switch (strElement){
             case "addButton": return this.addButton;
@@ -83,6 +95,10 @@ public class DialogContent extends Parent{
             case "integrationCode": return this.integrationCode;
             case "priorityCode": return this.priorityCode;
             case "toggleBar": return this.toggleBar;
+            case "academicPeriod": return this.academicPeriod;
+            case "academicPeriod1": return this.academicPeriod1;
+            case "gradeLevel": return this.gradeLevel;
+            case "gradeLevel2": return this.gradeLevel2;
         }
 
         return null;
