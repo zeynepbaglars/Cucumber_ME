@@ -12,6 +12,7 @@ public class GWD {
 
     public static WebDriver getDriver() {
 
+        // extend report türkçe bilg çalışmaması sebebiyle eklendi
         Locale.setDefault(new Locale("EN"));
         System.setProperty("user.language", "EN");
 
