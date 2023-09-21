@@ -10,4 +10,13 @@ https://www.programsbuzz.com/article/cucumber-testng-generate-extent-report-usin
             <version>1.9.2</version>
         </dependency>
 
-2-
+2-RunnerClass a plugin eklendi
+
+plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+
+
+3- extetent.properties dosyası resources klasörünün
+altına açılarak aşağıdaki 2 satır eklendi.
+
+extent.reporter.spark.start=true
+extent.reporter.spark.out=test-output/SparkReport/Spark.html
