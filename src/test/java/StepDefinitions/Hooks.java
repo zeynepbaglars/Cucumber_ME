@@ -19,6 +19,7 @@ public class Hooks {
     public void after(Scenario senaryo)
     {
 
+        // extent reportun plugini aktif iken açık kalsın
         if (senaryo.isFailed()){
             TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());
             byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
