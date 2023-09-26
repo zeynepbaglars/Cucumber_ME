@@ -22,7 +22,5 @@ public class _01_2DArray {
 
             System.out.println();
         }
-
-
     }
 }
