@@ -7,20 +7,45 @@ package ApachePOI;
  */
 
 
+import org.apache.poi.ss.usermodel.*;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class _11_Soru {
     public static void main(String[] args) {
-        path="src/test/java/ApachePOI/resource/ApacheExcel2.xlsx";
-        sheetName="testCitizen";
-        sutunSayisi=3;
+        String path="src/test/java/ApachePOI/resource/ApacheExcel2.xlsx";
+        String sheetName="testCitizen";
+        int sutunSayisi=1;
 
-        List = getData(path, sheetName, sutunSayisi);
+        ArrayList<ArrayList<String>> data = getData(path, sheetName, sutunSayisi);
+        System.out.println("data = " + data);
     }
 
 
-    getData(path, sheetname, sutunsayısı){
+    public static ArrayList<ArrayList<String>> getData(String path, String sheetName, int sutunSayisi){
+        ArrayList<ArrayList<String>> tablo=new ArrayList<>();
 
+        Sheet sheet=null;
+        try {
+            FileInputStream inputStream=new FileInputStream(path);
+            Workbook workbook = WorkbookFactory.create(inputStream);
+             sheet=workbook.getSheet(sheetName);
+        } catch (IOException e) {
+            System.out.println("e = " + e.getMessage());;
+        }
 
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {  //her bir satırı
 
-        return list;
+            ArrayList<String> satir=new ArrayList<>();
+            for (int j = 0; j < sutunSayisi; j++) {  // sutun sayısı kadar dolas
+                satir.add(sheet.getRow(i).getCell(j).toString());
+            }
+
+            tablo.add(satir);
+        }
+
+        return tablo;
     }
 }
