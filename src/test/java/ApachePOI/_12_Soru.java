@@ -32,7 +32,7 @@ public class _12_Soru {
 
         File file = new File(path);
 
-        if (!file.exists()) // dosya yok ise
+        if (!file.exists()) // dosya yok ise, ilk kez ve 1 kez çalışır
         {
             //hafzada worbook oluştur, içinde hafızada sheet oluştur
             XSSFWorkbook workbook = new XSSFWorkbook();
