@@ -121,7 +121,7 @@ public class _01_GetAllRowColumn extends JDBCParent {
 
             while (rs.next()) {
                 List<String> satir=new ArrayList<>();
-                for (int i = 1; i < rsmd.getColumnCount(); i++) {
+                for (int i = 1; i <= rsmd.getColumnCount(); i++) {
                     satir.add(rs.getString(i));
                 }
 
