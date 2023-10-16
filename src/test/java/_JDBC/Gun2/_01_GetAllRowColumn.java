@@ -32,16 +32,45 @@ public class _01_GetAllRowColumn extends JDBCParent {
         int columnCount= rsmd.getColumnCount();
 
         rs.next(); // ilk satıra gittim
-        for (int i = 1; i <= columnCount ; i++) {  // kaç tane başlık varsa hepsini yazıdrabilirm
-            System.out.print(rs.getString(i)+" ");
+        for (int i = 1; i <= columnCount ; i++) {  // kaç tane kolon varsa hepsindeki bilgileri
+            System.out.print(rs.getString(i)+" ");  // yazdırabilirim
         }
 
         System.out.println();
 
-        for (int i = 1; i < columnCount; i++) { // colonların isimlerini ve tiplerini aldım
+        for (int i = 1; i < columnCount; i++) { // kolonların isimlerini ve tiplerini aldım
             System.out.print(rsmd.getColumnName(i) +"\t"+rsmd.getColumnTypeName(i)+" ");
         }
     }
+
+
+    @Test
+    public void test3() throws SQLException {
+        // language tablosundaki tüm satırları ve tüm sütunları yazdırınız,
+        // aynı mysql sonuç ekranında olduğu gibi
+
+        ResultSet rs= sorguEkrani.executeQuery("select * from language");
+        ResultSetMetaData rsmd=rs.getMetaData();
+
+        for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+            System.out.print(rsmd.getColumnName(i)+"\t");
+        }
+
+        System.out.println();
+
+        while (rs.next()){
+
+            for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+                System.out.print(rs.getString(i)+"\t");
+            }
+
+            System.out.println();
+        }
+    }
+
+
+
+
 
 
 }
