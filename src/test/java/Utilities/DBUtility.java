@@ -10,7 +10,7 @@ public class DBUtility {
     public static  Statement statement;
 
 
-    public  List<List<String>> getDataList(String sql){
+    public static List<List<String>> getDataList(String sql){
         DBConnectionOpen();
 
         List<List<String>> dataList=new ArrayList<>();
@@ -38,7 +38,7 @@ public class DBUtility {
 
 
 
-    public void DBConnectionOpen()
+    public static void DBConnectionOpen()
     {
         String HostUrl = "jdbc:mysql://db-technostudy.ckr1jisflxpv.us-east-1.rds.amazonaws.com/sakila";
         String username = "root";
@@ -53,7 +53,7 @@ public class DBUtility {
         }
     }
 
-    public void DBConnectionClose()
+    public static void DBConnectionClose()
     {
         try {
             connection.close();
