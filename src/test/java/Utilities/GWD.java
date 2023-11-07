@@ -39,7 +39,7 @@ public class GWD {
 //                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
 //                    threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
 
-                    threadDriver.set(new EdgeDriver());
+                    threadDriver.set(new FirefoxDriver());
 
             }
         }
