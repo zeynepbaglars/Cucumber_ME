@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -35,10 +36,21 @@ public class GWD {
                 case "safari":  threadDriver.set(new SafariDriver());  break; // ilgili threade bir driver set ettim
                 case "edge":    threadDriver.set(new EdgeDriver());    break; // ilgili threade bir driver set ettim
                 default :
-                    FirefoxOptions options=new FirefoxOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new FirefoxDriver(options));
-                    //threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
+//                    FirefoxOptions options=new FirefoxOptions();
+//                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+//                    threadDriver.set(new FirefoxDriver(options));
+//                    //threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
+
+                    EdgeOptions eOptions=new EdgeOptions();
+                    eOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    threadDriver.set(new EdgeDriver(eOptions));
+
+
+
+
+
+
+
             }
         }
 
