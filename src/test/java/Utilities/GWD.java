@@ -35,9 +35,11 @@ public class GWD {
                 case "edge":    threadDriver.set(new EdgeDriver());    break; // ilgili threade bir driver set ettim
                 default :
                     //Jenkins için Chrome memory maximize
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new ChromeDriver(options)); // ilgili threade bir driver set ettim
+//                    ChromeOptions options = new ChromeOptions();
+//                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+//                    threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
+
+                    threadDriver.set(new FirefoxDriver());
 
             }
         }
